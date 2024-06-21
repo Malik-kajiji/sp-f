@@ -1,0 +1,949 @@
+@import './colors';
+@keyframes none-trans-to-full {
+    0% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes semi-trans-to-none {
+    0% {
+        opacity: 0.4;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0.0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0.0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        opacity: 0.0;
+        transform: translateX(60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        opacity: 0.0;
+        transform: translateX(-60px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.group {
+    position: relative;
+    background-color: $dark-color;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    .benifets {
+        background-color: $grey-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        .channel-image {
+            border-radius: 10px;
+            opacity: 0.4;
+            animation: semi-trans-to-none 0.3s forwards;
+            animation-delay: 0.4s;
+        }
+        .bn-heading {
+            color: $txt-color-1;
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            gap: 20px;
+            transform: translateY(-50px);
+            opacity: 0.0;
+            animation: slide-down 0.3s forwards;
+            animation-delay: 0.4s;
+            .icon {
+                display: flex;
+                color: $primary-color;
+            }
+        }
+        .bn-list {
+            li {
+                display: flex;
+                transform: translateY(50px);
+                opacity: 0.0;
+                animation: slide-up 0.3s forwards;
+                animation-delay: var(--d);
+                .icon {
+                    color: $primary-color;
+                }
+                p {
+                    color: $txt-color-1;
+                }
+            }
+        }
+    }
+    .plans-article {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        background-color: $bg-color;
+        .group-heading {
+            position: relative;
+            .group-icon {
+                position: absolute;
+                opacity: 0.4;
+                animation: semi-trans-to-none 0.5s forwards;
+                animation-delay: 0.4s;
+                border-radius: 4px;
+            }
+            .group-name {
+                position: absolute;
+                color: $txt-color-1;
+                transform: translateY(-50px);
+                opacity: 0.0;
+                animation: slide-down 0.5s forwards;
+                animation-delay: 0.4s;
+                text-wrap: nowrap;
+            }
+            .desc {
+                color: $txt-color-1;
+                opacity: 0.0;
+                animation: none-trans-to-full 0.5s forwards;
+                animation-delay: 0.4s;
+            }
+        }
+        .select-heading {
+            display: flex;
+            align-items: center;
+            color: $txt-color-2;
+            font-weight: 700;
+            transform: translateY(50px);
+            opacity: 0.0;
+            animation: slide-up 0.5s forwards;
+            animation-delay: 0.4s;
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $txt-color-2;
+                border-radius: 50%;
+                color: $bg-color;
+            }
+        }
+        .plans {
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            .card {
+                position: relative;
+                background-color:$light-grey-color;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                outline: 1px solid transparent;
+                transition: 0.3s;
+                opacity: 0.0;
+                animation: none-trans-to-full 0.5s forwards;
+                animation-delay: var(--d);
+                cursor: pointer;
+                &:hover {
+                    outline: 1px solid rgba($color: $primary-color, $alpha: 0.5);
+                }
+                &.super {
+                    &::before {
+                        position: absolute;
+                        content:'';
+                        background: linear-gradient(45deg, #ffffff0c, #ffffff0e);
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        z-index: 0;
+                        border-radius: 10px;
+                    }
+                }
+                .savings {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 1;
+                    span {
+                        font-weight: 700;
+                        color: $primary-color;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: $extra-light-grey-color;
+                    }
+                }
+                .price {
+                    z-index: 1;
+                    .usdt {
+                        color: $txt-color-1;
+                        font-weight: 600;
+                    }
+                    .period {
+                        color: $txt-color-2;
+                    }
+                }
+                .card-heading {
+                    z-index: 1;
+                    color: $txt-color-1;
+                    font-weight: 400;
+                }
+                .period-desc {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    position: absolute;
+                    .icon {
+                        display: flex;
+                        align-items: center;
+                        color: $primary-color;
+                    }
+                    p {
+                        font-weight: 600;
+                    }
+                }
+                .add-btn {
+                    z-index: 1;
+                    position: absolute;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $txt-color-1;
+                    background-color: $extra-light-grey-color;
+                    font-weight: 700;
+                    transition: 0.1s;
+                }
+                &.included:hover {
+                    outline: 1px solid rgba($color: #D63031, $alpha: 0.5);
+                    .re-btn {
+                        color: #D63031;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:1420px) {
+    .group {
+        height: 100vh;
+        .benifets {
+            height: 100vh;
+            width: 720px;
+            padding: 40px;
+            .channel-image {
+                width: 480px;
+            }
+            .bn-heading {
+                width: 480px;
+                margin: 30px 0;
+                gap: 20px;
+            }
+            .bn-list {
+                width: 480px;
+                li {
+                    gap: 10px;
+                }
+            }
+        }
+        .plans-article {
+            height: 100vh;
+            width: calc(100% - 720px);
+            gap: 30px;
+            padding: 40px 20px 20px 120px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            .group-heading {
+                padding: 50px 90px 0 0 ;
+                .group-icon {
+                    top: 0;
+                    right: 0;
+                    width: 80px;
+                }
+                .group-name {
+                    top: 0px;
+                    right: 90px;
+                }
+            }
+            .select-heading {
+                gap: 10px;
+                .icon {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+            .plans {
+                gap: 30px;
+                padding: 0 55px 0 0;
+                .card {
+                    width: 100%;
+                    height: 180px;
+                    padding: 20px;
+                    &.super {
+                        height: 180px;
+                    }
+                    .savings {
+                        position: absolute;
+                        top: 15px;
+                        left: 10px;
+                        width: fit-content;
+                        span {
+                            padding: 5px 30px;
+                            border-radius: 20px;
+                        }
+                    }
+                    .price {
+                        position: absolute;
+                        top: 0px;
+                        right: 10px;
+                    }
+                    .card-heading {
+                        position: absolute;
+                        top: 45px;
+                        right: 15px;
+                    }
+                    .period-desc {
+                        right: 15px;
+                        bottom: 30px;
+                        width: 430px;
+                        p {
+                            color: $txt-color-2;
+                        }
+                    }
+                    .add-btn {
+                        display: none;
+                    }
+                    .add-icon {
+                        position: absolute;
+                        bottom: 10px;
+                        left: 10px;
+                        display: flex;
+                        background-color: transparent;
+                        color: $txt-color-1;
+                        transition: 0.3s;
+                    }
+                    &:hover {
+                        .add-icon {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width:1120px) and (max-width: 1420px){
+    .group {
+        height: 100vh;
+        .benifets {
+            height: 100vh;
+            width: 560px;
+            padding: 40px;
+            .channel-image {
+                width: 480px;
+            }
+            .bn-heading {
+                width: 480px;
+                margin: 30px 0;
+                gap: 20px;
+            }
+            .bn-list {
+                width: 480px;
+                li {
+                    gap: 10px;
+                }
+            }
+        }
+        .plans-article {
+            height: 100vh;
+            width: calc(100% - 560px);
+            gap: 30px;
+            padding: 40px 10px 20px 80px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            .group-heading {
+                padding: 50px 90px 0 0 ;
+                .group-icon {
+                    top: 0;
+                    right: 0;
+                    width: 80px;
+                }
+                .group-name {
+                    top: 0px;
+                    right: 90px;
+                }
+            }
+            .select-heading {
+                gap: 10px;
+                .icon {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+            .plans {
+                gap: 30px;
+                padding: 0 55px 0 0;
+                .card {
+                    width: 100%;
+                    height: 190px;
+                    padding: 20px;
+                    &.super {
+                        height: 190px;
+                    }
+                    .savings {
+                        position: absolute;
+                        top: 15px;
+                        left: 10px;
+                        width: fit-content;
+                        span {
+                            padding: 5px 30px;
+                            border-radius: 20px;
+                        }
+                    }
+                    .price {
+                        position: absolute;
+                        top: 0px;
+                        right: 10px;
+                    }
+                    .card-heading {
+                        position: absolute;
+                        top: 45px;
+                        right: 15px;
+                    }
+                    .period-desc {
+                        right: 15px;
+                        bottom: 30px;
+                        width: 350px;
+                        p {
+                            color: $txt-color-2;
+                        }
+                    }
+                    .add-btn {
+                        display: none;
+                    }
+                    .add-icon {
+                        position: absolute;
+                        bottom: 10px;
+                        left: 10px;
+                        display: flex;
+                        background-color: transparent;
+                        color: $txt-color-1;
+                        transition: 0.3s;
+                    }
+                    &:hover {
+                        .add-icon {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:768px) and (max-width: 1120px) {
+    .group {
+        flex-direction: column;
+        height: fit-content;
+        .benifets {
+            height: fit-content;
+            width: 100%;
+            padding: 40px;
+            .channel-image {
+                width: 100%;
+            }
+            .bn-heading {
+                width: 100%;
+                margin: 30px 0;
+                gap: 20px;
+            }
+            .bn-list {
+                width: 100%;
+                li {
+                    gap: 10px;
+                }
+            }
+        }
+        .plans-article {
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 30px;
+            padding: 40px 10px 20px 10px;
+            .group-heading {
+                padding: 30px 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                .group-icon {
+                    position: relative;
+                    width: 80px;
+                }
+                .group-name {
+                    position: relative;
+                }
+                .desc {
+                    text-align: center;
+                }
+            }
+            .select-heading {
+                width: 100%;
+                justify-content: center;
+                gap: 10px;
+                .icon {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+            .plans {
+                padding: 0 30px;
+                gap: 30px;
+                .card {
+                    width: 100%;
+                    height: 180px;
+                    padding: 20px;
+                    &.super {
+                        height: 180px;
+                    }
+                    .savings {
+                        position: absolute;
+                        top: 15px;
+                        left: 15px;
+                        width: fit-content;
+                        span {
+                            padding: 5px 30px;
+                            border-radius: 20px;
+                        }
+                    }
+                    .price {
+                        position: absolute;
+                        top: 10px;
+                        right: 15px;
+                    }
+                    .card-heading {
+                        position: absolute;
+                        top: 50px;
+                        right: 15px;
+                    }
+                    .period-desc {
+                        right: 15px;
+                        bottom: 30px;
+                        width: 520px;
+                        p {
+                            color: $txt-color-2;
+                        }
+                    }
+                    .add-btn {
+                        display: none;
+                    }
+                    .add-icon {
+                        position: absolute;
+                        bottom: 10px;
+                        left: 10px;
+                        display: flex;
+                        background-color: transparent;
+                        color: $txt-color-1;
+                        transition: 0.3s;
+                    }
+                    &:hover {
+                        .add-icon {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:480px) and (max-width: 768px){
+    .group {
+        flex-direction: column;
+        height: fit-content;
+        .benifets {
+            height: fit-content;
+            width: 100%;
+            padding: 20px;
+            .channel-image {
+                width: 100%;
+            }
+            .bn-heading {
+                width: 100%;
+                margin: 20px 0;
+                gap: 20px;
+            }
+            .bn-list {
+                width: 100%;
+                li {
+                    gap: 10px;
+                }
+            }
+        }
+        .plans-article {
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 30px;
+            padding: 40px 10px 20px 10px;
+            .group-heading {
+                padding: 10px 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                .group-icon {
+                    position: relative;
+                    width: 80px;
+                }
+                .group-name {
+                    position: relative;
+                }
+                .desc {
+                    text-align: center;
+                }
+            }
+            .select-heading {
+                width: 100%;
+                justify-content: center;
+                gap: 10px;
+                .icon {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+            .plans {
+                padding: 0 10px;
+                gap: 20px;
+                .card {
+                    width: 100%;
+                    height: 170px;
+                    padding: 20px;
+                    &.super {
+                        height: 170px;
+                    }
+                    .savings {
+                        position: absolute;
+                        top: 15px;
+                        left: 10px;
+                        width: fit-content;
+                        span {
+                            padding: 5px 30px;
+                            border-radius: 20px;
+                        }
+                    }
+                    .price {
+                        position: absolute;
+                        top: 10px;
+                        right: 15px;
+                    }
+                    .card-heading {
+                        position: absolute;
+                        top: 45px;
+                        right: 15px;
+                    }
+                    .period-desc {
+                        right: 15px;
+                        bottom: 30px;
+                        width: 370px;
+                        p {
+                            color: $txt-color-2;
+                        }
+                    }
+                    .add-btn {
+                        display: none;
+                    }
+                    .add-icon {
+                        position: absolute;
+                        bottom: 10px;
+                        left: 10px;
+                        display: flex;
+                        background-color: transparent;
+                        color: $txt-color-1;
+                        transition: 0.3s;
+                    }
+                    &:hover {
+                        .add-icon {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:370px) and (max-width: 480px){
+    .group {
+        flex-direction: column;
+        height: fit-content;
+        .benifets {
+            height: fit-content;
+            width: 100%;
+            padding: 10px;
+            .channel-image {
+                width: 100%;
+            }
+            .bn-heading {
+                width: 100%;
+                margin: 20px 0;
+                gap: 20px;
+            }
+            .bn-list {
+                width: 100%;
+                li {
+                    gap: 10px;
+                }
+            }
+        }
+        .plans-article {
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 20px;
+            padding: 40px 5px 20px 5px;
+            .group-heading {
+                padding: 10px 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                .group-icon {
+                    position: relative;
+                    width: 70px;
+                }
+                .group-name {
+                    position: relative;
+                }
+                .desc {
+                    text-align: center;
+                }
+            }
+            .select-heading {
+                width: 100%;
+                justify-content: center;
+                gap: 10px;
+                .icon {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+            .plans {
+                padding: 0 5px;
+                gap: 15px;
+                .card {
+                    width: 100%;
+                    padding: 130px 10px 0px 10px;
+                    .savings {
+                        position: absolute;
+                        top: 15px;
+                        left: 10px;
+                        width: fit-content;
+                        span {
+                            padding: 5px 30px;
+                            border-radius: 20px;
+                        }
+                    }
+                    .price {
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+                    }
+                    .card-heading {
+                        position: absolute;
+                        top: 50px;
+                        right: 15px;
+                    }
+                    .period-desc {
+                        position: relative;
+                        right: 15px;
+                        bottom: 30px;
+                        width: 280px;
+                        p {
+                            color: $txt-color-2;
+                        }
+                    }
+                    .add-btn {
+                        display: none;
+                    }
+                    .add-icon {
+                        position: absolute;
+                        bottom: 10px;
+                        left: 10px;
+                        display: flex;
+                        background-color: transparent;
+                        color: $txt-color-1;
+                        transition: 0.3s;
+                    }
+                    &:hover {
+                        .add-icon {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:370px){
+    .group {
+        flex-direction: column;
+        height: fit-content;
+        .benifets {
+            height: fit-content;
+            width: 100%;
+            padding: 10px;
+            .channel-image {
+                width: 100%;
+            }
+            .bn-heading {
+                width: 100%;
+                margin: 20px 0;
+                gap: 20px;
+            }
+            .bn-list {
+                width: 100%;
+                li {
+                    gap: 10px;
+                }
+            }
+        }
+        .plans-article {
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 20px;
+            padding: 40px 5px 20px 5px;
+            .group-heading {
+                padding: 10px 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                .group-icon {
+                    position: relative;
+                    width: 70px;
+                }
+                .group-name {
+                    position: relative;
+                }
+                .desc {
+                    text-align: center;
+                }
+            }
+            .select-heading {
+                width: 100%;
+                justify-content: center;
+                gap: 10px;
+                .icon {
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+            .plans {
+                padding: 0 5px;
+                gap: 15px;
+                .card {
+                    width: 100%;
+                    padding: 130px 10px 0px 10px;
+                    .savings {
+                        position: absolute;
+                        top: 15px;
+                        left: 10px;
+                        width: fit-content;
+                        span {
+                            padding: 5px 30px;
+                            border-radius: 20px;
+                        }
+                    }
+                    .price {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                    }
+                    .card-heading {
+                        position: absolute;
+                        top: 40px;
+                        right: 10px;
+                    }
+                    .period-desc {
+                        position: relative;
+                        right: 15px;
+                        bottom: 30px;
+                        width: 210px;
+                        p {
+                            color: $txt-color-2;
+                        }
+                    }
+                    .add-btn {
+                        display: none;
+                    }
+                    .add-icon {
+                        position: absolute;
+                        bottom: 10px;
+                        left: 10px;
+                        display: flex;
+                        background-color: transparent;
+                        color: $txt-color-1;
+                        transition: 0.3s;
+                    }
+                    &:hover {
+                        .add-icon {
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

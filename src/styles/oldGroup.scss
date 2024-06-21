@@ -1,0 +1,167 @@
+@import './colors';
+.old-group {
+    background-color: $dark-color;
+    .group-image {
+        height: 60vh;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    .intro-container-holder {
+        background-color: $light-grey-color;
+        border-radius: 0px 0 10px 10px;
+        .intro {
+            .holder {
+                grid-column: 1/13;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 50px 0px;
+                gap: 10px;
+                .heading {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                    img {
+                        width: 60px;
+                    }
+                    h2 {
+                        color: $txt-color-1;
+                    }
+                }
+                .desc {
+                    width: 100%;
+                    color: $txt-color-2;
+                }
+                .num {
+                    color: $primary-color;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+    .cards-container-holder {
+        background-color: $dark-color;
+        .cards{
+            .cards-holder{
+                grid-column: 1/13;
+                margin: 120px 0px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: fit-content;
+                .card {
+                    position: relative;
+                    height: fit-content;
+                    min-height: 450px;
+                    width: 380px;
+                    background-color: $extra-light-grey-color;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 210px 0 140px 0;
+                    .card-heading {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 70px;
+                        background-color: #D9D9D9;
+                        color: #000;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 10px 10px 0 0;
+                    }
+                    .price {
+                        position: absolute;
+                        top: 80px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        text-wrap: nowrap;
+                        .usdt {
+                            color: $txt-color-1;
+                        }
+                        .period {
+                            color: $txt-color-2;
+                        }
+                    }
+                    .bn-heading {
+                        position: absolute;
+                        top: 160px;
+                        right: 20px;
+                        color: $txt-color-1;
+                    }
+                    .bn-list {
+                        width: 340px;
+                        li {
+                            display: flex;
+                            gap: 10px;
+                            .icon {
+                                color: $primary-color;
+                            }
+                            p {
+                                color: $txt-color-2;
+                            }
+                        }
+                    }
+                    .add-btn {
+                        background-color: #D9D9D9;
+                        width: 340px;
+                        position: absolute;
+                        bottom: 20px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        height: 50px;
+                        border-radius: 8px;
+                        color: #000;
+                        font-weight: 500;
+                    }
+                    &.mid {
+                        .card-heading {
+                            background-color: $primary-color;
+                        }
+                        .add-btn {
+                            background-color: $primary-color;
+                        }
+                    }
+                    &.super {
+                        .card-heading {
+                            background-color: $primary-color;
+                        }
+                        .add-btn {
+                            background-color: $primary-color;
+                        }
+                    }
+                }
+                .super-ov {
+                    position: relative;
+                    height: fit-content;
+                    min-height: 450px;
+                    width: 380px;
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        width: calc(100% + 20px);
+                        height: calc(100% + 20px);
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%,-50%);
+                        border-radius: 20px;
+                        background-color: $primary-color;
+                        opacity: 0.5;
+                        filter: blur(1.5rem);
+                    }
+                }
+            }
+        }
+    }
+}

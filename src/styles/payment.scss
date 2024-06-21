@@ -1,0 +1,1169 @@
+@import './colors';
+:root {
+    --form-width:820px;
+    --form-height:700px;
+}
+.payment {
+    position: relative;
+    background-color: $bg-color;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .exit-btn {
+        position: absolute;
+        background-color: transparent;
+        display: flex;
+        color: $primary-color;
+    }
+    .bg-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        opacity: 0.5;
+        user-select: none;
+    }
+    .not-logged-in {
+        position: relative;
+        z-index: 10;
+        height: var(--form-height);
+        width: var(--form-width);
+        overflow: hidden;
+        .slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(var(--form-width) * 5);
+            height: var(--form-height);
+            transform: translateX(calc(-1 * var(--form-width) * var(--d)));
+            display: flex;
+            flex-direction: row-reverse;
+            transition: transform 0.7s;
+        }
+        .cart {
+            position: relative;
+            height: var(--form-height);
+            width: var(--form-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 30px 150px 30px;
+            .heading {
+                position: absolute;
+                top: 0;
+                color: $txt-color-1;
+            }
+            .line-image {
+                position: absolute;
+            }
+            .channels {
+                height: 100%;
+                width: 100%;
+                overflow-y: scroll;
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                .channel {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 10px;
+                    background-color: rgba($color: #ffffff, $alpha: 0.2);
+                    backdrop-filter: blur(0.2rem);
+                    border-radius: 8px;
+                    color: $txt-color-1;
+                    margin-top: 10px;
+                    .name {
+                        display: flex;
+                        align-items: center;
+                        img {
+                            border-radius: 4px;
+                        }
+                    }
+                    .period {
+                        text-align: center;
+                    }
+                    .price {
+                        text-align: center;
+                    }
+                }
+            }
+            .total-price {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: $txt-color-1;
+                background-color: $extra-light-grey-color;
+                padding: 0 20px;
+                border-radius: 8px;
+            }
+            .next-btn {
+                position: absolute;
+                border-radius: 8px;
+                background-color: $primary-color;
+                box-shadow: 0 0 10px 5px rgba($color: $primary-color, $alpha: 0.2);
+                color: #000000;
+                &:hover {
+                    outline: 1px solid rgba($color: $primary-color, $alpha: 0.8);
+                    box-shadow: 0 0 12px 6px rgba($color: $primary-color, $alpha: 0.4);
+                }
+            }
+        }
+        .creat-account {
+            position: relative;
+            height: var(--form-height);
+            width: var(--form-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 100px 30px 80px 30px;
+            .heading {
+                position: absolute;
+                top: 0;
+                color: $txt-color-1;
+            }
+            .line-image {
+                position: absolute;
+            }
+            .acc-input {
+                width: 100%;
+                border-radius: 8px;
+                background-color: rgba($color: #ffffff, $alpha: 0.2);
+                outline: none;
+                border: none;
+                color: $txt-color-1;
+                border: 1px solid $txt-color-3;
+                backdrop-filter: blur(0.2rem);
+            }
+            .agreement {
+                width: 100%;
+                display: flex;
+                p {
+                    color: $txt-color-2;
+                    a {
+                        color: $primary-color;
+                    }
+                }
+            }
+            .next-btn {
+                position: absolute;
+                border-radius: 8px;
+                background-color: $primary-color;
+                box-shadow: 0 0 10px 5px rgba($color: $primary-color, $alpha: 0.2);
+                color: #000000;
+                &:hover {
+                    outline: 1px solid rgba($color: $primary-color, $alpha: 0.8);
+                    box-shadow: 0 0 12px 6px rgba($color: $primary-color, $alpha: 0.4);
+                }
+            }
+        }
+        .verification {
+            position: relative;
+            height: var(--form-height);
+            width: var(--form-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            justify-content: flex-start;
+            .heading {
+                position: absolute;
+                top: 0;
+                color: $txt-color-1;
+            }
+            .line-image {
+                position: absolute;
+            }
+            .exp-txt {
+                color: $txt-color-1;
+            }
+            .code {
+                width: 100%;
+                border-radius: 8px;
+                background-color: rgba($color: #ffffff, $alpha: 0.2);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: $txt-color-1;
+                border: 1px solid $txt-color-3;
+                backdrop-filter: blur(0.2rem);
+                cursor: pointer;
+                span {
+                    display: flex;
+                }
+            }
+            .telegram-icon {
+                border-radius: 50%;
+                border: 1px solid $txt-color-2;
+                background-color: rgba($color: #ffffff, $alpha: 0.2);
+                backdrop-filter: blur(0.2rem);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $txt-color-2;
+                &:hover {
+                    outline: 2px solid $txt-color-3;
+                }
+            }
+            .gif-video {
+                background-color: #fff;
+            }
+            .next-btn {
+                position: absolute;
+                border-radius: 8px;
+                background-color: $primary-color;
+                box-shadow: 0 0 10px 5px rgba($color: $primary-color, $alpha: 0.2);
+                color: #000000;
+                &:hover {
+                    outline: 1px solid rgba($color: $primary-color, $alpha: 0.8);
+                    box-shadow: 0 0 12px 6px rgba($color: $primary-color, $alpha: 0.4);
+                }
+            }
+        }
+        .payment-info {
+            position: relative;
+            height: var(--form-height);
+            width: var(--form-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 100px 30px 150px 30px;
+            .heading {
+                position: absolute;
+                top: 0;
+                color: $txt-color-1;
+            }
+            .line-image {
+                position: absolute;
+            }
+            .exp-txt {
+                color: $txt-color-2;
+                text-align: center;
+                b {
+                    color: $txt-color-1;
+                    font-weight: 600;
+                }
+            }
+            .address {
+                width: 100%;
+                border-radius: 8px;
+                background-color: rgba($color: #ffffff, $alpha: 0.2);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: $txt-color-1;
+                border: 1px solid $txt-color-3;
+                backdrop-filter: blur(0.2rem);
+                cursor: pointer;
+                p {
+                    width: calc(100% - 40px);
+                    text-align: left;
+                    overflow: hidden;
+                }
+                span {
+                    display: flex;
+                }
+            }
+            .or-txt {
+                color: $txt-color-1;
+            }
+            .qr-code-image {
+                width: 220px;
+            }
+            .wallet-address {
+                position: absolute;
+                width: 100%;
+                border-radius: 8px;
+                background-color: rgba($color: #ffffff, $alpha: 0.2);
+                outline: none;
+                border: none;
+                color: $txt-color-1;
+                border: 1px solid $txt-color-3;
+                backdrop-filter: blur(0.2rem);
+            }
+            .next-btn {
+                position: absolute;
+                border-radius: 8px;
+                background-color: $primary-color;
+                box-shadow: 0 0 10px 5px rgba($color: $primary-color, $alpha: 0.2);
+                color: #000000;
+                &:hover {
+                    outline: 1px solid rgba($color: $primary-color, $alpha: 0.8);
+                    box-shadow: 0 0 12px 6px rgba($color: $primary-color, $alpha: 0.4);
+                }
+            }
+        }
+        .complete-message {
+            position: relative;
+            height: var(--form-height);
+            width: var(--form-width);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            .heading {
+                position: absolute;
+                top: 0;
+                color: $txt-color-1;
+            }
+            .line-image {
+                position: absolute;
+            }
+            .icon {
+                display: flex;
+                color: #2ECC71;
+            }
+            .done-txt {
+                font-weight: 800;
+                color: #2ECC71;
+                text-align: center;
+            }
+            p {
+                color: #2ECC71;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:1420px) {
+    .payment {
+        --form-width:820px;
+        .exit-btn {
+            top: 20px;
+            left: 20px;
+        }
+        .bg-image {
+            height: 80vh;
+        }
+        .not-logged-in {
+            height: 700px;
+            .cart {
+                padding: 120px 30px 150px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .channels {
+                    .channel {
+                        .name {
+                            gap: 10px;
+                            width: 460px;
+                            img {
+                                width: 80px;
+                            }
+                        }
+                        .period {
+                            width: 120px;
+                        }
+                        .price {
+                            width: 80px;
+                        }
+                    }
+                }
+                .total-price {
+                    bottom: 80px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+            }
+            .creat-account {
+                padding: 120px 30px 150px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .acc-input {
+                    padding: 12px 10px;
+                    margin-top: 10px;
+                }
+                .agreement {
+                    gap: 10px;
+                    margin-top: 20px;
+                    .check {
+                        width: 20px;
+                    }
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+            }
+            .verification {
+                padding: 120px 30px 90px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .code {
+                    padding: 10px;
+                }
+                .telegram-icon {
+                    width: 90px;
+                    height: 90px;
+                    font-size: 48px;
+                }
+                .gif-video {
+                    width: 100%;
+                    height: 300px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+            }
+            .payment-info {
+                padding: 120px 30px 90px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .address {
+                    padding: 10px;
+                }
+                .qr-code-image {
+                    width: 220px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+                .wallet-address {
+                    bottom: 80px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    padding: 12px 10px;
+                }
+            }
+            .complete-message {
+                padding: 120px 30px 90px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .icon {
+                    font-size: 324px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:1120px) and (max-width: 1419px){
+    .payment {
+        --form-width:820px;
+        .exit-btn {
+            top: 20px;
+            left: 10px;
+        }
+        .bg-image {
+            height: 80vh;
+        }
+        .not-logged-in {
+            height: 700px;
+            .cart {
+                padding: 120px 30px 150px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .channels {
+                    .channel {
+                        .name {
+                            gap: 10px;
+                            width: 460px;
+                            img {
+                                width: 80px;
+                            }
+                        }
+                        .period {
+                            width: 120px;
+                        }
+                        .price {
+                            width: 80px;
+                        }
+                    }
+                }
+                .total-price {
+                    bottom: 80px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+            }
+            .creat-account {
+                padding: 120px 30px 150px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .acc-input {
+                    padding: 12px 10px;
+                    margin-top: 10px;
+                }
+                .agreement {
+                    gap: 10px;
+                    margin-top: 20px;
+                    .check {
+                        width: 20px;
+                    }
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+            }
+            .verification {
+                padding: 120px 30px 90px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .code {
+                    padding: 10px;
+                }
+                .telegram-icon {
+                    width: 90px;
+                    height: 90px;
+                    font-size: 48px;
+                }
+                .gif-video {
+                    width: 100%;
+                    height: 300px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+            }
+            .payment-info {
+                padding: 120px 30px 90px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .address {
+                    padding: 10px;
+                }
+                .qr-code-image {
+                    width: 220px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+                .wallet-address {
+                    bottom: 80px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    padding: 12px 10px;
+                }
+            }
+            .complete-message {
+                padding: 120px 30px 90px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .icon {
+                    font-size: 324px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:768px) and (max-width: 1119px) {
+    .payment {
+        padding-top: 70px;
+        --form-width:720px;
+        .exit-btn {
+            top: 20px;
+            left: 20px;
+        }
+        .bg-image {
+            height: 80vh;
+        }
+        .not-logged-in {
+            .cart {
+                padding: 100px 30px 150px 30px;
+                .line-image {
+                    width: 160px;
+                    top: 65px;
+                }
+                .channels {
+                    .channel {
+                        .name {
+                            gap: 10px;
+                            width: 420px;
+                            img {
+                                width: 80px;
+                            }
+                        }
+                        .period {
+                            width: 110px;
+                        }
+                        .price {
+                            width: 60px;
+                        }
+                    }
+                }
+                .total-price {
+                    bottom: 80px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+            }
+            .creat-account {
+                padding: 100px 30px 150px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .acc-input {
+                    padding: 12px 10px;
+                    margin-top: 10px;
+                }
+                .agreement {
+                    gap: 10px;
+                    margin-top: 20px;
+                    .check {
+                        width: 20px;
+                    }
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+            }
+            .verification {
+                padding: 100px 30px 90px 30px;
+                .line-image {
+                    width: 150px;
+                    top: 65px;
+                }
+                .code {
+                    padding: 10px;
+                }
+                .telegram-icon {
+                    width: 90px;
+                    height: 90px;
+                    font-size: 48px;
+                }
+                .gif-video {
+                    width: 100%;
+                    height: 300px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+            }
+            .payment-info {
+                padding: 100px 30px 90px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .address {
+                    padding: 10px;
+                }
+                .qr-code-image {
+                    width: 220px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 60px;
+                }
+                .wallet-address {
+                    bottom: 80px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    padding: 12px 10px;
+                }
+            }
+            .complete-message {
+                padding: 100px 30px 90px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .icon {
+                    font-size: 262px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:480px) and (max-width: 767px){
+    .payment {
+        --form-width:480px;
+        padding-top: 70px;
+        .exit-btn {
+            top: 20px;
+            left: 15px;
+        }
+        .bg-image {
+            width: calc(100% - 80px);
+            max-height: 80vh;
+        }
+        .not-logged-in {
+            .cart {
+                padding: 80px 30px 150px 30px;
+                .line-image {
+                    width: 120px;
+                    top: 50px;
+                }
+                .channels {
+                    .channel {
+                        .name {
+                            gap: 10px;
+                            width: 220px;
+                            img {
+                                width: 80px;
+                            }
+                            h2 {
+                                font-size: 16px;
+                            }
+                        }
+                        .period {
+                            width: 100px;
+                        }
+                        .price {
+                            width: 50px;
+                        }
+                    }
+                }
+                .total-price {
+                    bottom: 70px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 50px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 50px;
+                }
+            }
+            .creat-account {
+                padding: 80px 30px 150px 30px;
+                .line-image {
+                    width: 120px;
+                    top: 50px;
+                }
+                .acc-input {
+                    padding: 12px 10px;
+                    margin-top: 10px;
+                }
+                .agreement {
+                    gap: 5px;
+                    margin-top: 20px;
+                    .check {
+                        width: 20px;
+                    }
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 50px;
+                }
+            }
+            .verification {
+                padding: 80px 30px 90px 30px;
+                .line-image {
+                    width: 120px;
+                    top: 50px;
+                }
+                .code {
+                    padding: 10px;
+                }
+                .telegram-icon {
+                    width: 80px;
+                    height: 80px;
+                    font-size: 42px;
+                }
+                .gif-video {
+                    width: 100%;
+                    height: 300px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 50px;
+                }
+            }
+            .payment-info {
+                padding: 120px 30px 90px 30px;
+                .line-image {
+                    width: 200px;
+                    top: 80px;
+                }
+                .address {
+                    padding: 10px;
+                }
+                .qr-code-image {
+                    width: 220px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 50px;
+                }
+                .wallet-address {
+                    bottom: 70px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    padding: 12px 10px;
+                }
+            }
+            .complete-message {
+                padding: 90px 30px 90px 30px;
+                .line-image {
+                    width: 160px;
+                    top: 50px;
+                }
+                .icon {
+                    font-size: 262px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:370px) and (max-width: 479px){
+    .payment {
+        --form-width:370px;
+        padding-top: 70px;
+        .exit-btn {
+            top: 20px;
+            left: 10px;
+        }
+        .bg-image {
+            width: calc(100% - 80px);
+            max-height: 80vh;
+        }
+        .not-logged-in {
+            .cart {
+                padding: 80px 0px 130px 0px;
+                .line-image {
+                    width: 120px;
+                    top: 50px;
+                }
+                .channels {
+                    .channel {
+                        .name {
+                            gap: 5px;
+                            width: 200px;
+                            img {
+                                width: 60px;
+                            }
+                            h2 {
+                                font-size: 16px;
+                            }
+                        }
+                        .period {
+                            width: 90px;
+                        }
+                        .price {
+                            width: 45px;
+                        }
+                    }
+                }
+                .total-price {
+                    bottom: 70px;
+                    left: 5px;
+                    width: calc(100% - 10px);
+                    height: 50px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 5px;
+                    width: calc(100% - 10px);
+                    height: 50px;
+                    box-shadow: 0 0 5px 2px rgba($color: $primary-color, $alpha: 0.2);
+                }
+            }
+            .creat-account {
+                padding: 80px 0px 130px 0px;
+                .line-image {
+                    width: 120px;
+                    top: 50px;
+                }
+                .acc-input {
+                    padding: 12px 10px;
+                    margin-top: 10px;
+                }
+                .agreement {
+                    gap: 5px;
+                    margin-top: 20px;
+                    .check {
+                        width: 20px;
+                    }
+                }
+                .next-btn {
+                    bottom: 10px;
+                    width: calc(100% - 10px);
+                    height: 50px;
+                    box-shadow: 0 0 5px 2px rgba($color: $primary-color, $alpha: 0.2);
+                    height: 50px;
+                }
+            }
+            .verification {
+                padding: 80px 30px 70px 30px;
+                .line-image {
+                    width: 120px;
+                    top: 50px;
+                }
+                .code {
+                    padding: 10px;
+                }
+                .telegram-icon {
+                    width: 70px;
+                    height: 70px;
+                    font-size: 38px;
+                }
+                .gif-video {
+                    width: 100%;
+                    height: 300px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 50px;
+                }
+            }
+            .payment-info {
+                padding: 80px 30px 70px 30px;
+                .line-image {
+                    width: 120px;
+                    top: 50px;
+                }
+                .address {
+                    padding: 10px;
+                }
+                .qr-code-image {
+                    width: 220px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 50px;
+                }
+                .wallet-address {
+                    bottom: 70px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    padding: 12px 10px;
+                }
+            }
+            .complete-message {
+                padding: 90px 30px 90px 30px;
+                .line-image {
+                    width: 160px;
+                    top: 50px;
+                }
+                .icon {
+                    font-size: 200px;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:369px){
+    .payment {
+        --form-width:300px;
+        padding-top: 70px;
+        .exit-btn {
+            top: 15px;
+            left: 10px;
+        }
+        .bg-image {
+            width: calc(100% - 80px);
+            max-height: 80vh;
+        }
+        .not-logged-in {
+            .cart {
+                padding: 80px 0px 130px 0px;
+                .line-image {
+                    width: 120px;
+                    top: 50px;
+                }
+                .channels {
+                    .channel {
+                        .name {
+                            gap: 5px;
+                            width: 200px;
+                            img {
+                                width: 60px;
+                            }
+                            h2 {
+                                font-size: 16px;
+                            }
+                        }
+                        .period {
+                            width: 90px;
+                        }
+                        .price {
+                            width: 45px;
+                        }
+                    }
+                }
+                .total-price {
+                    bottom: 70px;
+                    left: 0px;
+                    width: 100%;
+                    height: 50px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 0px;
+                    width: 100%;
+                    height: 50px;
+                }
+            }
+            .creat-account {
+                padding: 80px 0px 130px 0px;
+                .line-image {
+                    width: 120px;
+                    top: 50px;
+                }
+                .acc-input {
+                    padding: 12px 10px;
+                    margin-top: 10px;
+                }
+                .agreement {
+                    gap: 5px;
+                    margin-top: 20px;
+                    .check {
+                        width: 20px;
+                    }
+                }
+                .next-btn {
+                    bottom: 10px;
+                    width: calc(100% - 10px);
+                    height: 50px;
+                    box-shadow: 0 0 5px 2px rgba($color: $primary-color, $alpha: 0.2);
+                    height: 50px;
+                }
+            }
+            .verification {
+                padding: 80px 30px 70px 30px;
+                .line-image {
+                    width: 120px;
+                    top: 50px;
+                }
+                .code {
+                    padding: 10px;
+                }
+                .telegram-icon {
+                    width: 70px;
+                    height: 70px;
+                    font-size: 38px;
+                }
+                .gif-video {
+                    width: 100%;
+                    height: 300px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 50px;
+                }
+            }
+            .payment-info {
+                padding: 80px 30px 70px 30px;
+                .line-image {
+                    width: 120px;
+                    top: 50px;
+                }
+                .address {
+                    padding: 10px;
+                }
+                .qr-code-image {
+                    width: 220px;
+                }
+                .next-btn {
+                    bottom: 10px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    height: 50px;
+                }
+                .wallet-address {
+                    bottom: 70px;
+                    left: 30px;
+                    width: calc(100% - 60px);
+                    padding: 12px 10px;
+                }
+            }
+            .complete-message {
+                padding:90px 30px 90px 30px;
+                .line-image {
+                    width: 160px;
+                    top: 50px;
+                }
+                .icon {
+                    font-size: 200px;
+                }
+            }
+        }
+    }
+}

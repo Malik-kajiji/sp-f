@@ -1,0 +1,878 @@
+@import './colors';
+.my-account {
+    width: 100%;
+    background-color: $bg-color;
+    .my-acc-header {
+        position: relative;
+        width: 100%;
+        background-color: $extra-light-grey-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: 4px solid $primary-color;
+        // &::after {
+        //     content: '';
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     width: 100%;
+        //     background-color: $primary-color;
+        // }
+        .holder {
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            .user-image {
+                background-image: linear-gradient(#3F0C8D,#6D15F3);
+                border-radius: 8px;
+            }
+            .user-name {
+                color: $txt-color-1;
+                font-weight: 600;
+            }
+        }
+    }
+    .verify-container {
+        .holder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            .warrning-txt {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #f39d1262;
+                border: 2px solid #f39c12;
+                border-radius: 8px;
+                color: $txt-color-1;
+                span {
+                    display: flex;
+                }
+            }
+            .code-holder {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .code {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    color: $txt-color-1;
+                    background-color: $extra-light-grey-color;
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: $txt-color-3;
+                        }
+                    }
+                }
+                .txt-to-explain {
+                    color: $txt-color-1;
+                }
+                .telegram-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: $txt-color-1;
+                    background-color: $extra-light-grey-color;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: $txt-color-3;
+                    }
+                }
+            }
+            .gif-explain {
+                background-color: $txt-color-2;
+            }
+        }
+    }
+    .subs-container {
+        .my-subs {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            .my-subs-heading {
+                color: $txt-color-1;
+                font-weight: 600;
+            }
+            .no-subs {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 40px;
+                h2 {
+                    text-align: center;
+                    color: $txt-color-1;
+                }
+            }
+            .list {
+                width: 100%;
+                .heading {
+                    border-bottom: 4px solid $txt-color-1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    color: $txt-color-1;
+                    p {
+                        font-weight: 300;
+                    }
+                    .left-time-heading {
+                        text-align: center;
+                    }
+                }
+                .sub {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 100%;
+                    border-bottom: 1px solid $txt-color-1;
+                    .channel {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        .name {
+                            color: $txt-color-1;
+                            font-weight: 400;
+                        }
+                        .channel-image {
+                            border-radius: 8px;
+                        }
+                    }
+                    .left-time {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        &.ended {
+                            .value {
+                                color: #D63031;
+                            }
+                        }
+                        &.about {
+                            .value {
+                                color: #f39c12;
+                            }
+                        }
+                        .foreverTXT {
+                            color: $txt-color-1;
+                            margin: 10px 0px;
+                            text-align: center;
+                        }
+                        .time {
+                            .name {
+                                color: $txt-color-2;
+                            }
+                            .value {
+                                display: flex;
+                                justify-content: center;
+                                color: $txt-color-1;
+                                span {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    &.op0 {
+                                        opacity: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .isActive {
+                        button {
+                            background-color: $primary-color;
+                            color: $bg-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:1420px) {
+    .my-account {
+        min-height: calc(100vh - 100px);
+        .my-acc-header {
+            height: 100px;
+            &::after {
+                height: 25px;
+            }
+            .holder {
+                grid-column: 1/13;
+                height: 80px;
+                gap: 20px;
+                .user-image {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+        .verify-container {
+            
+            .holder {
+                grid-column: 1/13;
+                margin-top: 20px;
+                gap: 20px;
+                .warrning-txt {
+                    gap: 10px;
+                    padding: 0 30px;
+                    height: 50px;
+                    width: 780px;
+                }
+                .code-holder {
+                    width: 780px;
+                    height: 60px;
+                    .code {
+                        padding: 0 0 0 30px;
+                        gap: 15px;
+                        height: 60px;
+                        border-radius: 30px;
+                        span {
+                            width: 60px;
+                            height: 60px;
+                        }
+                    }
+                    .telegram-icon {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+                .gif-explain {
+                    width: 380px;
+                    height: 260px;
+                }
+            }
+        }
+        .subs-container {
+            margin-top: 10px;
+            .my-subs {
+                grid-column: 1/13;
+                .line-image {
+                    margin-top: 10px;
+                    width: 250px;
+                }
+                .list {
+                    margin-top: 20px;
+                    .heading {
+                        height: 90px;
+                        .state-heading {
+                            width: 130px;
+                        }
+                        .left-time-heading {
+                            width: 360px;
+                        }
+                        .name {
+                            width: 460px;
+                        }
+                    }
+                    .sub {
+                        padding: 10px 0;
+                        .channel {
+                            gap: 10px;
+                            width: 460px;
+                            .channel-image {
+                                width: 140px;
+                            }
+                        }
+                        .left-time {
+                            width: 360px;
+                            .time {
+                                .value {
+                                    width: 70px;
+                                }
+                            }
+                        }
+                        .isActive {
+                            button {
+                                width: 130px;
+                                height: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:1120px) and (max-width: 1419px){
+    .my-account {
+        min-height: calc(100vh - 100px);
+        .my-acc-header {
+            height: 100px;
+            &::after {
+                height: 25px;
+            }
+            .holder {
+                grid-column: 1/13;
+                height: 80px;
+                gap: 20px;
+                .user-image {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+        .verify-container {
+            height: 200px;
+            .holder {
+                grid-column: 1/13;
+                margin-top: 20px;
+                gap: 20px;
+                .warrning-txt {
+                    gap: 10px;
+                    padding: 0 30px;
+                    height: 50px;
+                    width: 780px;
+                }
+                .code-holder {
+                    width: 780px;
+                    height: 60px;
+                    .code {
+                        padding: 0 0 0 30px;
+                        gap: 15px;
+                        height: 60px;
+                        border-radius: 30px;
+                        span {
+                            width: 60px;
+                            height: 60px;
+                        }
+                    }
+                    .telegram-icon {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+                .gif-explain {
+                    width: 380px;
+                    height: 260px;
+                }
+            }
+        }
+        .subs-container {
+            margin-top: 10px;
+            .my-subs {
+                grid-column: 1/13;
+                .line-image {
+                    margin-top: 10px;
+                    width: 250px;
+                }
+                .list {
+                    margin-top: 20px;
+                    .heading {
+                        height: 90px;
+                        .state-heading {
+                            width: 130px;
+                        }
+                        .left-time-heading {
+                            width: 360px;
+                        }
+                        .name {
+                            width: 460px;
+                        }
+                    }
+                    .sub {
+                        padding: 10px 0;
+                        .channel {
+                            gap: 10px;
+                            width: 460px;
+                            .channel-image {
+                                width: 140px;
+                            }
+                        }
+                        .left-time {
+                            width: 360px;
+                            .time {
+                                .value {
+                                    width: 70px;
+                                }
+                            }
+                        }
+                        .isActive {
+                            button {
+                                width: 130px;
+                                height: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:768px) and (max-width: 1119px) {
+    .my-account {
+        min-height: calc(100vh - 100px);
+        .my-acc-header {
+            height: 100px;
+            &::after {
+                height: 25px;
+            }
+            .holder {
+                grid-column: 1/13;
+                height: 80px;
+                gap: 20px;
+                .user-image {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+        .verify-container {
+            height: 200px;
+            .holder {
+                grid-column: 1/13;
+                margin-top: 20px;
+                gap: 20px;
+                .warrning-txt {
+                    gap: 10px;
+                    padding: 0 30px;
+                    height: 50px;
+                    width: 740px;
+                }
+                .code-holder {
+                    width: 740px;
+                    height: 60px;
+                    .code {
+                        padding: 0 0 0 30px;
+                        gap: 15px;
+                        height: 60px;
+                        border-radius: 30px;
+                        span {
+                            width: 60px;
+                            height: 60px;
+                        }
+                    }
+                    .telegram-icon {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+                .gif-explain {
+                    width: 380px;
+                    height: 260px;
+                }
+            }
+        }
+        .subs-container {
+            margin-top: 10px;
+            .my-subs {
+                grid-column: 1/13;
+                .line-image {
+                    margin-top: 10px;
+                    width: 200px;
+                }
+                .list {
+                    margin-top: 10px;
+                    .heading {
+                        height: 90px;
+                        .state-heading {
+                            width: 100px;
+                        }
+                        .left-time-heading {
+                            width: 300px;
+                        }
+                        .name {
+                            width: 280px;
+                        }
+                    }
+                    .sub {
+                        padding: 10px 0;
+                        .channel {
+                            gap: 10px;
+                            width: 280px;
+                            .channel-image {
+                                width: 100px;
+                            }
+                        }
+                        .left-time {
+                            width: 300px;
+                            .time {
+                                .value {
+                                    width: 60px;
+                                }
+                            }
+                        }
+                        .isActive {
+                            button {
+                                width: 100px;
+                                height: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:480px) and (max-width: 767px){
+    .my-account {
+        min-height: calc(100vh - 100px);
+        .my-acc-header {
+            height: 100px;
+            &::after {
+                height: 25px;
+            }
+            .holder {
+                grid-column: 1/6;
+                height: 80px;
+                gap: 20px;
+                .user-image {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+        .verify-container {
+            height: 200px;
+            .holder {
+                grid-column: 1/6;
+                margin-top: 20px;
+                gap: 20px;
+                .warrning-txt {
+                    gap: 10px;
+                    padding: 0 30px;
+                    height: 60px;
+                    width: 460px;
+                }
+                .code-holder {
+                    width: 460px;
+                    height: 180px;
+                    flex-direction: column;
+                    .code {
+                        padding: 0 0 0 30px;
+                        gap: 15px;
+                        height: 60px;
+                        border-radius: 30px;
+                        span {
+                            width: 60px;
+                            height: 60px;
+                        }
+                    }
+                    .telegram-icon {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+                .gif-explain {
+                    width: 380px;
+                    height: 260px;
+                }
+            }
+        }
+        .subs-container {
+            margin-top: 10px;
+            .my-subs {
+                grid-column: 1/7;
+                .line-image {
+                    margin-top: 10px;
+                    width: 150px;
+                }
+                .list {
+                    margin-top: 10px;
+                    .heading {
+                        height: 90px;
+                        .state-heading {
+                            width: 95px;
+                        }
+                        .left-time-heading {
+                            width: 130px;
+                        }
+                        .name {
+                            width: 140px;
+                            text-align: center;
+                        }
+                    }
+                    .sub {
+                        padding: 10px 0;
+                        .channel {
+                            flex-direction: column;
+                            gap: 10px;
+                            width: 140px;
+                            .channel-image {
+                                width: 100px;
+                            }
+                        }
+                        .left-time {
+                            height: 130px;
+                            .time {
+                                .name {
+                                    margin-left: 10px;
+                                }
+                                .value {
+                                    margin-right: 15px;
+                                    width: 40px;
+                                }
+                                &.secs,
+                                &.mins {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .isActive {
+                            button {
+                                width: 95px;
+                                height: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width:370px) and (max-width: 479px){
+    .my-account {
+        min-height: calc(100vh - 100px);
+        .my-acc-header {
+            height: 100px;
+            &::after {
+                height: 25px;
+            }
+            .holder {
+                grid-column: 1/6;
+                height: 80px;
+                gap: 20px;
+                .user-image {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+        .verify-container {
+            height: 200px;
+            .holder {
+                grid-column: 1/6;
+                margin-top: 20px;
+                gap: 20px;
+                .warrning-txt {
+                    gap: 10px;
+                    padding: 0 20px;
+                    height: 80px;
+                    width: 350px;
+                }
+                .code-holder {
+                    width: 350px;
+                    height: 180px;
+                    flex-direction: column;
+                    .code {
+                        padding: 0 0 0 15px;
+                        gap: 5px;
+                        height: 50px;
+                        border-radius: 25px;
+                        span {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                    .telegram-icon {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+                .gif-explain {
+                    width: 350px;
+                    height: 240px;
+                }
+            }
+        }
+        .subs-container {
+            margin-top: 10px;
+            .my-subs {
+                grid-column: 1/7;
+                .line-image {
+                    margin-top: 10px;
+                    width: 150px;
+                }
+                .list {
+                    margin-top: 10px;
+                    .heading {
+                        height: 70px;
+                        .state-heading {
+                            width: 95px;
+                            font-size: 20px;
+                            font-weight: 400;
+                            text-align: end;
+                        }
+                        .left-time-heading {
+                            width: 120px;
+                            font-size: 20px;
+                            font-weight: 400;
+                        }
+                        .name {
+                            width: 120px;
+                            text-align: center;
+                            font-size: 20px;
+                            font-weight: 400;
+                        }
+                    }
+                    .sub {
+                        padding: 5px 0;
+                        .channel {
+                            flex-direction: column;
+                            width: 120px;
+                            .channel-image {
+                                width: 110px;
+                            }
+                        }
+                        .left-time {
+                            width: 110px;
+                            .time {
+                                .name {
+                                    margin-left: 10px;
+                                }
+                                .value {
+                                    margin-right: 15px;
+                                    width: 40px;
+                                }
+                                &.secs,
+                                &.mins,
+                                &.hours {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .isActive {
+                            button {
+                                width: 95px;
+                                height: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width:369px){
+    .my-account {
+        min-height: calc(100vh - 100px);
+        .my-acc-header {
+            height: 100px;
+            &::after {
+                height: 25px;
+            }
+            .holder {
+                grid-column: 1/6;
+                height: 80px;
+                gap: 20px;
+                .user-image {
+                    width: 80px;
+                    height: 80px;
+                }
+            }
+        }
+        .verify-container {
+            height: 200px;
+            .holder {
+                grid-column: 1/6;
+                margin-top: 20px;
+                gap: 20px;
+                .warrning-txt {
+                    gap: 10px;
+                    padding: 0 20px;
+                    height: 80px;
+                    width: 280px;
+                }
+                .code-holder {
+                    width: 280px;
+                    height: 180px;
+                    flex-direction: column;
+                    .code {
+                        padding: 0;
+                        gap: 0px;
+                        height: 40px;
+                        border-radius: 20px;
+                        span {
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                    .telegram-icon {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+                .gif-explain {
+                    width: 280px;
+                    height: 240px;
+                }
+            }
+        }
+        .subs-container {
+            margin-top: 10px;
+            .my-subs {
+                grid-column: 1/7;
+                .line-image {
+                    margin-top: 10px;
+                    width: 150px;
+                }
+                .list {
+                    margin-top: 10px;
+                    .heading {
+                        height: 70px;
+                        .state-heading {
+                            width: 85px;
+                            font-size: 20px;
+                            font-weight: 400;
+                            text-align: end;
+                        }
+                        .left-time-heading {
+                            width: 80px;
+                            font-size: 20px;
+                            font-weight: 400;
+                            
+                        }
+                        .name {
+                            width: 100px;
+                            text-align: center;
+                            font-size: 20px;
+                            font-weight: 400;
+                        }
+                    }
+                    .sub {
+                        padding: 5px 0;
+                        .channel {
+                            flex-direction: column;
+                            width: 100px;
+                            text-align: center;
+                            .channel-image {
+                                width: 100px;
+                            }
+                        }
+                        .left-time {
+                            width: 80px;
+                            
+                            .time {
+                                .name {
+                                    margin-left: 10px;
+                                }
+                                .value {
+                                    margin-right: 15px;
+                                    width: 40px;
+                                }
+                                &.secs,
+                                &.mins,
+                                &.hours {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .isActive {
+                            button {
+                                width: 85px;
+                                height: 35px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+@import './colors';
+.terms {
+    padding-top: 80px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-color;
+    gap: 60px;
+    position: relative;
+    .exit-btn {
+        position: absolute;
+        background-color: transparent;
+        display: flex;
+        color: $primary-color;
+        top: 10px;
+        left: 10px;
+    }
+    .heading {
+        width: 80%;
+        color: $primary-color;
+        font-weight: 600;
+        text-align: center;
+    }
+    .list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin: 0 40px;
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            span {
+                color: $primary-color;
+                font-weight: 600;
+            }
+            p {
+                color: $txt-color-2;
+                text-align: center;
+            }
+        }
+    }
+}
