@@ -4,6 +4,7 @@ import { BrowserRouter,Route , Routes, useLocation } from 'react-router-dom';
 import { Home,Group,Login, MyAccount, PaymentPage, TermsAndCond, ResetPassword, RePlaceOrder } from './pages'
 import { useState } from 'react';
 import { useSelector } from 'react-redux'
+import { NotFound } from './components/NotFound';
 
 function App() {
   const [showHeader,setShowHeader] = useState(true)
@@ -25,6 +26,7 @@ function App() {
           <Route path='/terms' element={<TermsAndCond />} />
           <Route path='/reset/:_id' element={<ResetPassword />} />
           <Route path='/complete-payment/:_id' element={<RePlaceOrder />} />
+          <Route path='*' element={<NotFound setShowHeader={setShowHeader} setShowCart={setShowCart} />} />
         </Routes>
         <Alert />
         {showHeader && <Footer />}

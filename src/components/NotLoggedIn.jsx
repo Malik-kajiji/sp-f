@@ -91,7 +91,7 @@ export const NotLoggedIn = () => {
             const { token } = userData
             isUserVerified(token,setCurrentFrom)
         }else {
-            if (walletInput.length < 12) {
+            if (walletInput.length === 0) {
                 dispatch(showWarrning({msg:'تأكد من ادخال عنوان محفظة صالح'}))
             } else {
                 handleCompleted(items,totalPrice,walletInput,userData?.token)

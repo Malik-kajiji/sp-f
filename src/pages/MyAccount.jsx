@@ -10,6 +10,8 @@ import { alertActions } from '../redux/AlertController'
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import { useState } from 'react'
 import { SubsComp } from '../components'
+import { CiLogout } from "react-icons/ci";
+
 
 
 
@@ -44,11 +46,14 @@ const MyAccount = () => {
       <header className='my-acc-header'>
         <div className='container header-container'>
           <ul className='holder' role='list'>
-            <li className='user-image' onClick={()=>logOut()}></li>
+            <li className='user-image'></li>
             <li className='user-name TXT-heading3'>
               {userName}
             </li>
           </ul>
+          <span className='logout-icon--5 TXT-heading' onClick={()=>logOut()}>
+            {CiLogout({})}
+          </span>
         </div>
       </header>
       {!isVerified ?

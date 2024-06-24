@@ -101,9 +101,15 @@ const SubsComp = ({ e, i }) => {
               </h2>
             </div>
           )}
-          <div className="isActive">
-            <button className="TXT-heading3">فعالة</button>
-          </div>
+          {isEnded ?
+            <div className="isActive">
+              <button className="TXT-heading3 not">غير فعالة</button>
+            </div>
+          :
+            <div className="isActive">
+              <button className="TXT-heading3">فعالة</button>
+            </div>
+          }
         </li>
       );
     }else {

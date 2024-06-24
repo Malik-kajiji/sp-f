@@ -61,7 +61,7 @@ export const VerifiedPay = () => {
         if(to === 'payment-info'){
             setCurrentFrom(1)
         }else {
-            if (walletInput.length < 12) {
+            if (walletInput.length === 0) {
                 dispatch(showWarrning({msg:'تأكد من ادخال عنوان محفظة صالح'}))
             } else {
                 handleCompleted(items,totalPrice,walletInput,token)

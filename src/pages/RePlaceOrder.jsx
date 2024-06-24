@@ -56,12 +56,14 @@ const RePlaceOrder = () => {
 
     const handleMoveToNext = (e) => {
         e.preventDefault();
-        if (walletInput.length < 12) {
+        if (walletInput.length === 0) {
             dispatch(showWarrning({msg:'تأكد من ادخال عنوان محفظة صالح'}))
         } else {
             handleCompleted(walletInput)
         }
     }
+
+    console.log(order)
 
     useEffect(()=>{
         const getData = async () => {
@@ -81,51 +83,62 @@ const RePlaceOrder = () => {
         getData()
     },[])
     return (
-        <section className='payment'>
-            <img className='bg-image' src="/images/dark-logo.png" alt="" />
-            <article className='not-logged-in'>
-                <div className='slider' style={{'--d':currentForm}}>
-                    <form className='payment-info'>
-                        <h2 className='heading TXT-heading'>الدفع</h2>
-                        <img className='line-image' src="/images/line-image.png" alt="" />
-                        <p className='TXT-normal exp-txt'>
-                            الرجاء تحويل مبلغ
-                            <b className='TXT-heading3' dir='ltr'> ( {order?.totalPrice - order?.firstPayment} USDT ) </b>
-                            إلى المحفظة الآتية
-                        </p>
-                        <div className='address' onClick={handleCopyAddress}>
-                            <span className='TXT-heading2'>{MdContentCopy({})}</span>
-                            <p className='TXT-footer' dir='ltr'>{address.walletId}</p>
+        <>
+            {order?
+                <section className='payment'>
+                    <img className='bg-image' src="/images/dark-logo.png" alt="" />
+                    <article className='not-logged-in'>
+                        <div className='slider' style={{'--d':currentForm}}>
+                            <form className='payment-info'>
+                                <h2 className='heading TXT-heading'>الدفع</h2>
+                                <img className='line-image' src="/images/line-image.png" alt="" />
+                                <p className='TXT-normal exp-txt'>
+                                    الرجاء تحويل مبلغ
+                                    <b className='TXT-heading3' dir='ltr'> ( {order?.totalPrice - order?.firstPayment} USDT ) </b>
+                                    إلى المحفظة الآتية
+                                </p>
+                                <div className='address' onClick={handleCopyAddress}>
+                                    <span className='TXT-heading2'>{MdContentCopy({})}</span>
+                                    <p className='TXT-footer' dir='ltr'>{address.walletId}</p>
+                                </div>
+                                <h2 className='TXT-heading2 or-txt'>أو</h2>
+                                <img className='qr-code-image' src={address.qrCode} alt="" />
+                                <input 
+                                    className='wallet-address TXT-normal' 
+                                    placeholder='عوان المحفظة الخاص بك!' 
+                                    type="text" 
+                                    value={walletInput}
+                                    onChange={(e)=>setWalletInput(e.target.value)}
+                                />
+                                <button className='next-btn TXT-heading2' onClick={(e)=>handleMoveToNext(e,'completed')}>
+                                    تم الدفع!
+                                </button>
+                            </form>
+                            <div className='complete-message'>
+                                <h2 className='heading TXT-heading'>الانتهاء</h2>
+                                <img className='line-image' src="/images/line-image.png" alt="" />
+                                <span className='icon'>
+                                    {FaRegCheckCircle({})}
+                                </span>
+                                <h2 className='TXT-heading done-txt'>
+                                    تم استلام طلبك بنجاح!
+                                </h2>
+                                <p className='TXT-normal'>
+                                    تأخذ عملية التحقق مالا يزيد عن 24 ساعة!
+                                </p>
+                            </div>
                         </div>
-                        <h2 className='TXT-heading2 or-txt'>أو</h2>
-                        <img className='qr-code-image' src={address.qrCode} alt="" />
-                        <input 
-                            className='wallet-address TXT-normal' 
-                            placeholder='عوان المحفظة الخاص بك!' 
-                            type="text" 
-                            value={walletInput}
-                            onChange={(e)=>setWalletInput(e.target.value)}
-                        />
-                        <button className='next-btn TXT-heading2' onClick={(e)=>handleMoveToNext(e,'completed')}>
-                            تم الدفع!
-                        </button>
-                    </form>
-                    <div className='complete-message'>
-                        <h2 className='heading TXT-heading'>الانتهاء</h2>
-                        <img className='line-image' src="/images/line-image.png" alt="" />
-                        <span className='icon'>
-                            {FaRegCheckCircle({})}
-                        </span>
-                        <h2 className='TXT-heading done-txt'>
-                            تم استلام طلبك بنجاح!
-                        </h2>
-                        <p className='TXT-normal'>
-                            تأخذ عملية التحقق مالا يزيد عن 24 ساعة!
-                        </p>
-                    </div>
+                    </article>
+                </section>
+                :
+                <div style={{width:'100%',height:'100vh',display:'flex',flexDirection:'column',alignItems:'center'}}>
+                    <img src="/images/not-found.png" alt="" />
+                    <h1 className='TXT-heading'>
+                        جاري البحث....
+                    </h1>
                 </div>
-            </article>
-        </section>
+            }
+        </>
     )
 }
 

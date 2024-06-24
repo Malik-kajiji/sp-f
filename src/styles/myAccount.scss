@@ -18,6 +18,17 @@
         //     width: 100%;
         //     background-color: $primary-color;
         // }
+        .logout-icon--5 {
+            position: absolute;
+            left: 0px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            color: $txt-color-2;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 10;
+        }
         .holder {
             z-index: 2;
             display: flex;
@@ -189,6 +200,10 @@
                         button {
                             background-color: $primary-color;
                             color: $bg-color;
+                            &.not {
+                                background-color: $txt-color-3;
+                                color: $txt-color-1;
+                            }
                         }
                     }
                 }

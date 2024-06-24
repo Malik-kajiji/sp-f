@@ -74,7 +74,7 @@ export const NotVerifiedPay = () => {
         }else if(to === 'payment-info') {
             isUserVerified(token,setCurrentFrom)
         }else {
-            if (walletInput.length < 12) {
+            if (walletInput.length === 0) {
                 dispatch(showWarrning({msg:'تأكد من ادخال عنوان محفظة صالح'}))
             } else {
                 handleCompleted(items,totalPrice,walletInput,token)
