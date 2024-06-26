@@ -102,7 +102,8 @@ const Home = () => {
               <h2 className='first-txt TXT-heading2'>خيارك الأفضل للتداول</h2>
               <span className='icon'>{HiOutlineArrowLongDown({})}</span>
               <h2 className='logo-txt TXT-heading'>Space Tech</h2>
-              <img className='logo-image' src="/images/space-tech-logo.png" alt="" />
+              <img className='logo-image' src="/images/3d-logo.png" alt="" />
+              {/* <img className='logo-image' src="/images/space-tech-logo.png" alt="" /> */}
               <p className='intro-txt TXT-normal'>نقدم لكم</p>
               <h2 className='TXT-heading no-1'>
                 المنصة الأولى على <br />
